@@ -7,7 +7,7 @@ jobs:
 
   dang:
     resources:
-      instance-type: P4000
+      instance-type: C5
     uses: script@v1
     with:
       script: echo Hello
