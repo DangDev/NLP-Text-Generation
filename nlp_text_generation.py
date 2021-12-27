@@ -4,7 +4,7 @@
 # The Workflow is triggered when its YAML file is present in the .gradient/workflows/ directory
 # in a GitHub repository linked to the user's Gradient project
 # It clones this repo and then in turn calls this file
-# This file outputs the generated text to outputs.txt in a Gradient-managed Dataset
+# This file outputs the genderated text to outputs.txt in a Gradient-managed Dataset
 # The Workflow runs on the Paperspace HuggingFace NLP container (paperspace/transformers-gpu:0.4.0)
 # See the Gradient documentation page for more details: ...
 #
