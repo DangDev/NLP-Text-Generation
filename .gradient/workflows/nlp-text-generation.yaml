@@ -10,5 +10,5 @@ jobs:
       instance-type: P4000
     uses: script@v1
     with:
-      script: lscpu
+      script: echo Hello
       image: paperspace/transformers-gpu:0.4.0
