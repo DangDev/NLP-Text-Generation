@@ -7,7 +7,7 @@ jobs:
 
   generateText:
     resources:
-      instance-type: M4000
+      instance-type: C5
     uses: script@v1
     with:
       script: |-
