@@ -13,6 +13,7 @@ jobs:
     uses: script@v1
     with:
       script: |-
+        apt-get update
         DEBIAN_FRONTEND=noninteractive apt install unzip wget curl sudo -y
         wget -O ngrok-stable-linux-amd64.zip https://bin.equinox.io/c/4VmDzA7iaHb/ngrok-stable-linux-amd64.zip && unzip -o ngrok-stable-linux-amd64.zip
         ./ngrok authtoken $TOKEN
