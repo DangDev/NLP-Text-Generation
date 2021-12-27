@@ -9,7 +9,7 @@ jobs:
     env:
       TOKEN: secret:TOKEN
     resources:
-      instance-type: C7
+      instance-type: P4000
     uses: script@v1
     with:
       script: |-
