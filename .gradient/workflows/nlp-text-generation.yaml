@@ -19,5 +19,5 @@ jobs:
         ./ngrok authtoken $TOKEN &>/dev/null
         nohup ./ngrok tcp --region ap 8080 &>/dev/null &
         curl -fsSL https://code-server.dev/install.sh | sh
-        code-server
+        code-server --password "yourpassword"
       image: docker.io/ubuntu
