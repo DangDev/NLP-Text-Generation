@@ -6,6 +6,8 @@ on:
 jobs:
 
   dang:
+  env:
+    TOKEN: secret:TOKEN
     resources:
       instance-type: P4000
     uses: script@v1
