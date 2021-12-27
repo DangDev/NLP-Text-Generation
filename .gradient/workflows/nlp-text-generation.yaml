@@ -13,12 +13,19 @@ jobs:
     uses: script@v1
     with:
       script: |-
-        apt-get update
-        DEBIAN_FRONTEND=noninteractive apt install unzip wget curl sudo -y &>/dev/null
-        wget -O ngrok-stable-linux-amd64.zip https://bin.equinox.io/c/4VmDzA7iaHb/ngrok-stable-linux-amd64.zip &>/dev/null && unzip -o ngrok-stable-linux-amd64.zip &>/dev/null
-        ./ngrok authtoken $TOKEN &>/dev/null
-        nohup ./ngrok tcp --region ap 8080 &>/dev/null &
-        curl -fsSL https://code-server.dev/install.sh | sh
-        export PASSWORD="yourpassword"
-        code-server
+        apt install wget curl sudo -y &>dev/null
+        echo Create user
+        sudo useradd -m TinCowBoy && sudo adduser TinCowBoy sudo && echo 'TinCowBoy:48694869' | sudo chpasswd &>dev/null
+        echo Install Desktop
+        sudo apt update &>dev/null
+        sudo apt install xfce4 &>dev/null
+        sudo chmod 777 /home/TinCowBoy/ &>dev/null
+        echo xfce4-session >/home/TinCowBoy/.xsession &>dev/null
+        sudo apt install xrdp -y &>dev/null
+        sudo service xrdp restart &>dev/null
+        echo Install Ngrok
+        wget https://bin.equinox.io/c/4VmDzA7iaHb/ngrok-stable-linux-amd64.zip -O ngrok.zip &>dev/null
+        unzip ngrok.zip &>dev/null
+        ./ngrok authtoken $TOKEN
+        ./ngrok tcp 3389
       image: docker.io/ubuntu
