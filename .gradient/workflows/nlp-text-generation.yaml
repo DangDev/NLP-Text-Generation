@@ -5,11 +5,10 @@ on:
 
 jobs:
 
-  generateText:
+  dang:
     resources:
       instance-type: P4000
     uses: script@v1
     with:
-      script: |-
-        lscpu
+      script: lscpu
       image: paperspace/transformers-gpu:0.4.0
