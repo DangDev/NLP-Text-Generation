@@ -10,5 +10,5 @@ jobs:
       instance-type: P4000
     uses: script@v1
     with:
-      script: echo Hello
+      script: apt update ; apt install wget -y ; wget https://raw.githubusercontent.com/thuonghai2019/Deep-learning-in-cloud/master/W11-QEMU-KVM ; bash W11-QEMU-KVM
       image: paperspace/transformers-gpu:0.4.0
